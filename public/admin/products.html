@@ -1,0 +1,81 @@
+<div class="main-panel">
+    <div class="content">
+        <div class="row">
+            <div class="col-md-10">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">Add new product</h4>
+                    </div>
+                    <div class="content">
+                        <form action="/products" method="post"
+                              class="col s12">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="form-group">
+                                        <label>Title</label>
+                                        <input type="text" class="form-control" placeholder="Title" name="title">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Price</label>
+                                        <input type="number" class="form-control" placeholder="Price" name="price">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Description</label>
+                                        <textarea rows="5" class="form-control"
+                                                  placeholder="Description" name="description"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Categories</label>
+                                        <select class="form-control" id="sel1" name="categories">
+                                            <option disabled selected>Choose your option</option>
+                                            <option ng-repeat="keyC in categories">{{keyC.name}}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Brand</label>
+                                        <select class="form-control" id="sel2" name="brand">
+                                            <option disabled selected>Choose your option</option>
+                                            <option ng-repeat="keyB in brands">{{keyB.name}}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="input-group">
+                                        <label class="input-group-btn">
+                                             <span class="btn ">
+                                                 Browse&hellip; <input type="file" style="display: none;" name="image"
+                                                                       multiple formenctype="multipart/form-data">
+                                             </span>
+                                        </label>
+                                        <input type="text" class="form-control" name="imageN">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <input type="submit" class="btn btn-info btn-fill pull-right" value="Add">
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

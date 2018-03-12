@@ -1,0 +1,145 @@
+<div class="main-panel box">
+    <div class="content">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">All products</h4>
+                    </div>
+                    <div class="content">
+                        <table class="table table-hover table-striped">
+                            <thead>
+                            <th>#</th>
+                            <th>Title</th>
+                            <th>Price</th>
+                            <th>Description</th>
+                            <th>Edit tools</th>
+                            </thead>
+                            <tbody>
+                            <tr ng-repeat="key in products">
+                                <td>{{ $index+1 }}</td>
+                                <td>{{ key.title }}</td>
+                                <td>{{ key.price }}</td>
+                                <td>{{ key.description }}</td>
+                                <td>
+                                    <a href="/products/{{ key._id }}" class="update" data-toggle="modal" data-target="#myModal">
+                                        <i class="pe-7s-pen"></i>
+                                    </a>
+                                    <a href="/products/{{ key._id }}?_method=DELETE" target="_blank" class="del">
+                                        <i class="pe-7s-trash"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Update product</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="content">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="">
+                                <div class="content">
+                                    <form action="/products/:product_id" method="put" target="_blank" class="col s12"
+                                          id="frmUploader">
+                                        <div class="row">
+                                            <div class="col-md-8">
+                                                <div class="form-group">
+                                                    <label>Title</label>
+                                                    <input type="text" class="form-control" placeholder="Title"
+                                                           name="title">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Price</label>
+                                                    <input type="number" class="form-control" placeholder="Price"
+                                                           name="price">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label>Description</label>
+                                                    <textarea rows="5" class="form-control"
+                                                              placeholder="Description" name="description"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Categories</label>
+                                                    <select class="form-control" name="cat" id="multiselect"
+                                                            multiple="multiple">
+
+                                                        <!-- <option ng-repeat="keyC in categories" >{{keyC.name}}</option>-->
+                                                        <option value="India">India</option>
+                                                        <option value="Australia">Australia</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Brand</label>
+                                                    <select class="form-control" id="sel2" name="brand">
+                                                        <option disabled selected>Choose your option</option>
+                                                        <option ng-repeat="keyB in brands">{{keyB.name}}</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="input-group">
+                                                    <label class="input-group-btn">
+                                            <span class="btn ">
+                                                Browse&hellip; <input type="file" style="display: none;"
+                                                                      formenctype="multipart/form-data">
+                                            </span>
+                                                    </label>
+                                                    <input type="text" class="form-control" name="image">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                            <button type="submit" class="btn btn-primary">Save changes</button>
+                                        </div>
+
+                                        <div class="clearfix"></div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+

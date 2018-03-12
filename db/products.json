@@ -1,0 +1,3 @@
+{"_id":{"$oid":"5aa69432293ae90b701bc429"},"categories":["cat1"],"title":"Apple new mac book 2015 March","price":899,"description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. ","brand":"brand1","image":"product-2.jpg","__v":0}
+{"_id":{"$oid":"5aa697fa293ae90b701bc42a"},"categories":["cat2"],"title":"Apple new mac book 2015 March ","price":799,"description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry.","brand":"brand2","image":"product-1.jpg","__v":0}
+{"_id":{"$oid":"5aa6982d293ae90b701bc42b"},"categories":["cat3"],"title":"Apple new mac book 2015 March","price":522,"description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry.","brand":"brand3","image":"product-3.jpg","__v":0}
